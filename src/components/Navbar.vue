@@ -1,5 +1,5 @@
 <template>
-    <header class="absolute inset-x-0 top-0 z-50 bg-gray-100">
+    <header class="bg-gray-100">
         <nav class="flex items-center justify-between p-4 lg:px-6" aria-label="Global">
             <div class="flex lg:flex-1">
                 <a href="#" class="-m-1.5 p-1.5">
@@ -13,12 +13,12 @@
                     <Bars3Icon class="h-6 w-6" aria-hidden="true" />
                 </button>
             </div>
-            <div class="hidden lg:flex lg:gap-x-12">
+            <div class="hidden lg:flex lg:gap-x-10">
                 <a v-for="item in navigation" :key="item.name" :href="item.href"
                     class="text-sm font-semibold leading-6 text-gray-700">{{ item.name }}</a>
             </div>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                <button type="button" class="bg-gray-100 px-5 py-2 text-sm text-gray-900 hover:bg-gray-50 mr-3">Sign
+                <button type="button" class="bg-transparent px-5 py-2 text-sm text-gray-900 hover:bg-gray-50 mr-3">Sign
                     in</button>
                 <button type="button" class="bg-gray-800 px-5 py-2 text-sm text-white hover:bg-gray-700">Sign up</button>
             </div>
@@ -59,6 +59,7 @@
 import { ref } from 'vue'
 import { Dialog, DialogPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
+import Button from './Button.vue';
 
 const navigation = [
     { name: 'VPS', href: '#' },

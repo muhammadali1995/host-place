@@ -1,5 +1,6 @@
 <script setup>
 import Navbar from './components/Navbar.vue';
+import Header from './components/Header.vue';
 </script>
 <script>
 export const theme = 'theme-default'
@@ -8,4 +9,5 @@ export const theme = 'theme-default'
 
 <template>
     <Navbar />
+    <Header />
 </template>
