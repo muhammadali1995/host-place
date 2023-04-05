@@ -1,5 +1,5 @@
 <template>
-    <header class="bg-gray-100">
+    <header class="bg-primary">
         <nav class="flex items-center justify-between p-4 lg:px-6" aria-label="Global">
             <div class="flex lg:flex-1">
                 <a href="#" class="-m-1.5 p-1.5">
@@ -15,12 +15,13 @@
             </div>
             <div class="hidden lg:flex lg:gap-x-10">
                 <a v-for="item in navigation" :key="item.name" :href="item.href"
-                    class="text-sm font-semibold leading-6 text-gray-700">{{ item.name }}</a>
+                    class="text-sm font-medium leading-6 text-secondary">{{ $t(item.name) }}</a>
             </div>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                <button type="button" class="bg-transparent px-5 py-2 text-sm text-gray-900 hover:bg-gray-50 mr-3">Sign
-                    in</button>
-                <button type="button" class="bg-gray-800 px-5 py-2 text-sm text-white hover:bg-gray-700">Sign up</button>
+                <button type="button" class="bg-transparent px-5 py-2 text-sm text-secondary hover:bg-gray-150 mr-3">{{
+                    $t('Sign in') }}</button>
+                <button type="button" class="bg-secondary px-5 py-2 text-sm text-white hover:bg-gray-250">
+                    {{ $t('Sign up') }}</button>
             </div>
         </nav>
         <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">

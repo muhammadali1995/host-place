@@ -9,3 +9,7 @@
     --color-custom-300: #0f2837;
     --color-custom-400: 251, 222, 216;
 }
+
+body {
+    font-family: 'Inter', sans-serif;
+}

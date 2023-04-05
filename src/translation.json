@@ -1,7 +1,32 @@
 {
     "messages": {
         "en": {
-            "hello": "hello world"
+            "Sign in": "Sign in",
+            "Sign up": "Sign up",
+            "VPS": "VPS",
+            "Webhosting & Domein": "Webhosting & Domein",
+            "Dedicated Server & Colo": "Dedicated Server & Colo",
+            "Reseller": "Reseller",
+            "Over Ons": "Over Ons",
+            "Voor developers, door developers": "Voor developers, door developers",
+            "API driven, hoge performance voor een aantrekkelijkeprijs": "API driven, hoge performance voor een aantrekkelijkeprijs",
+            "Join us now": "Join us now",
+            "Learn more": "Learn more",
+            "VPS & Cloud": "VPS & Cloud",
+            "Dedicated Server": "Dedicated Server",
+            "Website": "Website",
+            "Overzicht van onze diensten": "Overzicht van onze diensten",
+            "Snelle betrouwbare VPS met root toegang zodat je alle vrijheid hebt om deze in te stellen hoe jo wilt": "Snelle betrouwbare VPS met root toegang zodat je alle vrijheid hebt om deze in te stellen hoe jo wilt",
+            "Webhosting": "Webhosting",
+            "Onze belofte": "Onze belofte",
+            "Wij zijn zelf developers. We weten waar we tegen aan lopen en luisteren graag naar de specifieke wensen van onze peers": "Wij zijn zelf developers. We weten waar we tegen aan lopen en luisteren graag naar de specifieke wensen van onze peers",
+            "Controleerbaar": "Controleerbaar",
+            "Transparante monitoring maakt onze performance altijd inzichtelijk": "Transparante monitoring maakt onze performance altijd inzichtelijk",
+            "Schaalbaar": "Schaalbaar",
+            "Beheersbaar": "Beheersbaar",
+            "Betaalbaar": "Betaalbaar",
+            "Testimonials van blije klanten zodra we die hebben": "Testimonials van blije klanten zodra we die hebben",
+            "Aliqua cupidatat id duis irure sunt exercitation voluptate cillum. Consectetur ad ex do in reprehenderit est dolor elit et exercitation do ad. Consectetur ad ex do in reprehenderit est dolor elit et exercitation": "Aliqua cupidatat id duis irure sunt exercitation voluptate cillum. Consectetur ad ex do in reprehenderit est dolor elit et exercitation do ad. Consectetur ad ex do in reprehenderit est dolor elit et exercitation"
         },
         "ru": {
             "hello": "んにちは、世界"
