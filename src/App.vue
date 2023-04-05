@@ -1,8 +1,11 @@
 <script setup>
-    
+import Navbar from './components/Navbar.vue';
+</script>
+<script>
+export const theme = 'theme-default'
 </script>
 
 
 <template>
-    <h1>{{ $t("message.hello") }}</h1>
+    <Navbar />
 </template>

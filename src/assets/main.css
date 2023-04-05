@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.theme-default {
+    --color-custom-100: #0f2837;
+    --color-custom-200: 0px 0px 24px #eb5a3c;
+    --color-custom-300: #0f2837;
+    --color-custom-400: 251, 222, 216;
+}

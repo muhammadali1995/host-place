@@ -1,0 +1,10 @@
+{
+    "messages": {
+        "en": {
+            "hello": "hello world"
+        },
+        "ru": {
+            "hello": "んにちは、世界"
+        }
+    }
+}
