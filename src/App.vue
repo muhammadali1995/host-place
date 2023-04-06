@@ -6,6 +6,10 @@ import Promises from './components/Promises.vue';
 import Testimonial from './components/Testimonial.vue';
 import Contact from './components/Contact.vue';
 import Footer from './components/Footer.vue';
+import Prices from './components/Prices.vue';
+import VPS from './components/VPS.vue'
+import Vragen from './components/Vragen.vue'
+import Accordions from './components/Accordions.vue'
 </script>
 <script>
 export const theme = 'theme-default'
@@ -15,11 +19,16 @@ export const theme = 'theme-default'
 <template>
     <div class="max-w-[1440px] mx-auto">
         <Navbar />
-        <Header />
-        <Products />
+        <!-- <Header />
+                    <Products />
+                    <Promises />
+                    <Testimonial />
+                    <Contact /> -->
+        <Prices />
+        <VPS />
         <Promises />
-        <Testimonial />
-        <Contact />
+        <Accordions />
+        <Vragen />
         <Footer />
     </div>
 </template>

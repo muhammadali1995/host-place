@@ -16,7 +16,9 @@ export default {
           150: '#DEE1E6FF',
           250: '#424956FF',
           350: '#171A1FFF',
-          450:'#CFD2DAFF'
+          450:'#CFD2DAFF',
+          550:'#6F7787FF',
+          650:'#A7ADB7FF'
         }
       }
     },

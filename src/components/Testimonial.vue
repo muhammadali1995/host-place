@@ -3,6 +3,8 @@
         <h3 class="text-center text-3xl text-gray-350 mb-8 font-bold">
             {{ $t('Testimonials van blije klanten zodra we die hebben') }}
         </h3>
+        <swiper >
+    <swiper-slide :ref_key="1" :virtual-index="1">
         <figure class="flex lg:flex-row flex-col-reverse sm:justify-between justify-center items-center">
             <div class="relative max-w-[280px] mr-24">
                 <img src="./../assets/shadow.png" alt="image" class="absolute top-4 left-6">
@@ -28,6 +30,8 @@
                 </figcaption>
             </div>
         </figure>
+    </swiper-slide>
+</swiper>
     </div>
     <h3 class="mt-20 text-2xl text-center font-semibold text-gray-350">Partner van</h3>
     <div class="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 px-4 lg:px-28 mt-5">
@@ -38,8 +42,17 @@
         <img src="./../assets/partner5.png" alt="partner" class="mx-auto">
         <img src="./../assets/partner6.png" alt="partner" class="mx-auto">
     </div>
+    
 </template>
   
-<script setup>
+
+<script>
 import { StarIcon } from '@heroicons/vue/20/solid'
+import { Swiper,SwiperSlide } from 'swiper/vue';
+export default {
+    components: {
+        SwiperSlide ,
+        Swiper
+    }
+}
 </script>
