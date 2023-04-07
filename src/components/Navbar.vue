@@ -62,7 +62,7 @@ import Button from './Button.vue';
 
 const navigation = [
     { name: 'VPS', href: '/details' },
-    { name: 'Webhosting & Domein', href: '#' },
+    { name: 'Webhosting & Domein', href: '/webhosting' },
     { name: 'Dedicated Server & Colo', href: '#' },
     { name: 'Reseller', href: '#' },
     { name: 'Over Ons', href: '#' },
