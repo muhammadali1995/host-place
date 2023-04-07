@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import Home from './pages/Home.vue'
-import Details from './pages/VPS.vue'
+import Details from './pages/VPS-details.vue'
 import Webhosting from './pages/Webhosting.vue'
 
 import './assets/main.css'

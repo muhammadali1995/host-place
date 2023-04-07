@@ -9,7 +9,7 @@
                     $t('Neem contact op') }}
                 </button>
             </div>
-            <img src="./../assets/image.png" alt="image" class="md:flex-1 md:bg-cover md:max-h-96">
+            <img src="../../assets/image.png" alt="image" class="md:flex-1 md:bg-cover md:max-h-96">
         </div>
     </div>
 </template>

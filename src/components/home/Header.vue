@@ -14,7 +14,7 @@
                 {{ $t('Learn more') }}
             </button>
         </div>
-        <img src="./../assets/image.png" alt="banner" class="mt-6 lg:mt-0">
+        <img src="../../assets/image.png" alt="banner" class="mt-6 lg:mt-0">
     </div>
     <div class="flex justify-center pt-20 sm:gap-12 gap-5">
         <div v-for="product in products" :key="product.name"
@@ -26,9 +26,9 @@
 </template>
 
 <script setup>
-import cloud from './../assets/cloud.png'
-import server from './../assets/server.png'
-import website from './../assets/website.png'
+import cloud from '../../assets/cloud.png'
+import server from '../../assets/server.png'
+import website from '../../assets/website.png'
 
 const products = [
     { name: 'VPS & Cloud', img: cloud },

@@ -27,7 +27,7 @@
                         </p>
                         <ul role="list" class="mt-2.5 space-y-3 text-sm leading-6 text-gray-600">
                             <li v-for="feature in tier.features" :key="feature" class="flex gap-x-3">
-                             <img src="./../assets/tick.png" class="h-6 w-6 flex-none text-gray-350" alt="image">
+                             <img src="../../assets/tick.png" class="h-6 w-6 flex-none text-gray-350" alt="image">
                                 {{ $t(feature) }}
                             </li>
                         </ul>

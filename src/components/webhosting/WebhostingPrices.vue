@@ -68,7 +68,7 @@
                             </div>
                         </div>
                         <div class="flex flex-col items-center justify-center pt-20">
-                            <img src="./../assets/tickLg.png" alt="tick" class="w-10">
+                            <img src="../../assets/tickLg.png" alt="tick" class="w-10">
                             <p class="mt-11 variant8">{{ tier.ram }}</p>
                             <ul role="list" class="text-sm leading-6 text-gray-600 flex items-center flex-col">
                                 <li v-for="icon in tier.features.slice(0, 2)" :key="feature" class="mt-10">
@@ -89,8 +89,8 @@
 </template>
   
 <script setup>
-import tick from './../assets/tickLg.png'
-import cross from './../assets/cross.png'
+import tick from '../../assets/tickLg.png'
+import cross from '../../assets/cross.png'
 
 const tiers = [
     {

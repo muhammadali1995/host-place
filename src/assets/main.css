@@ -49,3 +49,12 @@ body {
         @apply text-xl font-semibold leading-6 text-gray-350
     }
 }
+
+.accordion button,div {
+    border: none !important;
+    padding: 0;
+}
+
+.content >div{
+    padding: 0;
+}

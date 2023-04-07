@@ -1,18 +1,16 @@
 <script setup>
-import Header from '../components/Header.vue';
-import Products from '../components/Products.vue';
-import Promises from '../components/Promises.vue';
-import Testimonial from '../components/Testimonial.vue';
-import Contact from '../components/Contact.vue';
+import Header from '../components/home/Header.vue';
+import Products from '../components/home/Products.vue';
+import Promises from '../components/shared/Promises.vue';
+import Testimonial from '../components/home/Testimonial.vue';
+import Contact from '../components/home/Contact.vue';
 </script>
 
 
 <template>
-    <div class="max-w-[1440px] mx-auto">
-        <Header />
-        <Products />
-        <Promises />
-        <Testimonial />
-        <Contact />
-    </div>
+    <Header />
+    <Products />
+    <Promises />
+    <Testimonial />
+    <Contact />
 </template>

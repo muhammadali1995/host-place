@@ -3,7 +3,7 @@
         <nav class="flex items-center justify-between p-4 lg:px-6">
             <div class="flex lg:flex-1">
                 <a href="/" class="-m-1.5 p-1.5">
-                    <img class="h-8 w-auto" src="./../assets/logo.png" alt="logo" />
+                    <img class="h-8 w-auto" src="../../assets/logo.png" alt="logo" />
                 </a>
             </div>
             <div class="flex lg:hidden">
@@ -58,7 +58,6 @@
 import { ref } from 'vue'
 import { Dialog, DialogPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
-import Button from './Button.vue';
 
 const navigation = [
     { name: 'VPS', href: '/details' },

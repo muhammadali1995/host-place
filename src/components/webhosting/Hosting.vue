@@ -18,10 +18,10 @@
                                 exercitation exercitation`) }}
             </p>
         </div>
-        <img src="./../assets/image.png" alt="image" class="sm:max-w-md mx-auto lg:mx-0 lg:mt-0 mt-6">
+        <img src="../../assets/image.png" alt="image" class="sm:max-w-md mx-auto lg:mx-0 lg:mt-0 mt-6">
     </div>
     <div class="flex lg:flex-row flex-col-reverse lg:items-center lg:justify-between mt-24 px-4 xl:px-32">
-        <img src="./../assets/image.png" alt="image" class="sm:max-w-md mx-auto lg:mx-0 lg:mt-0 mt-6">
+        <img src="../../assets/image.png" alt="image" class="sm:max-w-md mx-auto lg:mx-0 lg:mt-0 mt-6">
         <div>
             <h1 class="font-semibold text-4xl text-gray-350 text-center lg:text-left">
                 {{ $t('Hoge performance') }}
@@ -45,7 +45,7 @@
                                 exercitation exercitation`) }}
             </p>
         </div>
-        <img src="./../assets/image.png" alt="image" class="sm:max-w-md mx-auto lg:mx-0 lg:mt-0 mt-6">
+        <img src="../../assets/image.png" alt="image" class="sm:max-w-md mx-auto lg:mx-0 lg:mt-0 mt-6">
     </div>
 </template>
 <script>

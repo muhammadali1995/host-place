@@ -6,30 +6,27 @@
         <p class="mt-1.5 text-gray-350 text-center text-md mb-14">
             {{ $t('Exercitation dolore reprehenderit fugi') }}
         </p>
-        <div v-for="item of arr" class="mt-6">
-            <hr class="bg-gray-250 mb-6">
-            <div class="flex items-start justify-between" :onclick="() => changeActive(item.id)">
-                <div>
+        <Accordion>
+            <AccordionPanel v-for="item in arr" class="accordion mb-6">
+                <AccordionHeader>
+                    <hr class="bg-gray-250 mb-6">
+                    <div class="flex items-start justify-between mb-2">
+                        <p class="text-xl text-gray-350 font-semibold">
+                            {{ $t(item.title) }}
+                        </p>
+                    </div>
+                </AccordionHeader>
+                <AccordionContent class="content">
                     <p class="text-xl text-gray-350 font-semibold">
-                        {{ $t(item.title) }}
-                    </p>
-                    <p v-if="activeTab === item.id"
-                        class="text-xl text-gray-350 font-semibold">
                         {{ $t(item.subtitile) }}
                     </p>
-                </div>
-                <ArrowSmallDownIcon class="w-6 h-6" aria-hidden="true" />
-            </div>
-        </div>
+                </AccordionContent>
+            </AccordionPanel>
+        </Accordion>
     </div>
 </template>
 <script setup>
-import { ArrowSmallDownIcon } from '@heroicons/vue/20/solid';
-let activeTab = 1
-
-const changeActive = (id) => {
-    activeTab = id
-}
+import { Accordion, AccordionPanel, AccordionHeader, AccordionContent } from 'flowbite-vue'
 
 const arr = [
     { id: 1, title: 'Eiusmod id laboris nulla dolor veniam nisi consequat velit est?', subtitile: 'Eiusmod id laboris nulla dolor veniam nisi consequat velit est?Eiusmod id laboris nulla dolor veniam nisi consequat velit est?' },

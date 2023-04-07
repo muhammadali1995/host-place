@@ -22,7 +22,7 @@
 </template>
   
 <script setup>
-import image from './../assets/image.png'
+import image from '../../assets/image.png'
 const products = [
     {
         name: 'VPS',

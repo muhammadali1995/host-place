@@ -27,10 +27,10 @@
 </template>
   
 <script setup>
-import control from './../assets/controlbar.png'
-import scale from './../assets/scalebar.png'
-import heers from './../assets/heersbar.png'
-import betal from './../assets/betalbar.png'
+import control from '../../assets/controlbar.png'
+import scale from '../../assets/scalebar.png'
+import heers from '../../assets/heersbar.png'
+import betal from '../../assets/betalbar.png'
 
 const promises = [
     {

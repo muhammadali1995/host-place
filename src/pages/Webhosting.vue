@@ -7,9 +7,9 @@
 </template>
 
 <script setup>
-import WebhostingPrices from '../components/WebhostingPrices.vue';
-import Hosting from '../components/Hosting.vue';
-import Promises from '../components/Promises.vue';
-import Accordions from '../components/Accordions.vue';
-import Vragen from '../components/Vragen.vue';
+import WebhostingPrices from '../components/webhosting/WebhostingPrices.vue';
+import Hosting from '../components/webhosting/Hosting.vue';
+import Promises from '../components/shared/Promises.vue';
+import Accordions from '../components/shared/Accordions.vue';
+import Vragen from '../components/shared/Vragen.vue';
 </script>
