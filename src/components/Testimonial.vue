@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-primary pb-14 pt-5 container">
+    <div class="bg-primary pb-14 pt-5 cont">
         <h3 class="text-center mb-8 variant9">
             {{ $t('Testimonials van blije klanten zodra we die hebben') }}
         </h3>

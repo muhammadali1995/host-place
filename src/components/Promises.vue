@@ -1,6 +1,6 @@
 <template>
     <div class="bg-white py-24 sm:py-32 mt-16">
-        <div class="container">
+        <div class="cont">
             <h2 class="variant5 text-center">
                 {{ $t('Onze belofte') }}
             </h2>

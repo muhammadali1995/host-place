@@ -1,6 +1,6 @@
 <template>
     <footer class="bg-primary" aria-labelledby="footer-heading">
-        <div class="lg:pt-24 py-8 container">
+        <div class="lg:pt-24 py-8 cont">
             <div class="lg:flex items-start justify-between">
                 <img src="./../assets/foot_logo.png" alt="logo" class="hidden lg:block">
                 <div class="grid grid-cols-3 gap-7">

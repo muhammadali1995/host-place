@@ -1,5 +1,5 @@
 <template>
-    <div class="relative overflow-hidden  flex items-center justify-between py-24 flex-col lg:flex-row container">
+    <div class="relative overflow-hidden  flex items-center justify-between py-24 flex-col lg:flex-row cont">
         <div>
             <h2 class="variant2">
                 {{ $t('Voor developers, door developers') }}

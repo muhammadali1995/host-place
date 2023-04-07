@@ -17,39 +17,69 @@
                 </button>
             </div>
             <div class="mt-10 flow-root lg:-mx-8">
-                <div class="isolate grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 container">
+                <div class="isolate grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 cont">
                     <div class="bg-primary p-2">
-                        <h2 class="variant6 mt-40">Key Features</h2>
-                        <p class="mt-10 variant7">Lorem ipsum dolor sit.</p>
-                        <p class="mt-10 variant7">Lorem ipsum dolor sit.</p>
-                        <p class="mt-10 variant7">Lorem ipsum dolor sit.</p>
-                        <p class="mt-10 variant7">Lorem ipsum dolor sit.</p>
+                        <h2 class="variant6 mt-64">
+                            {{ $t('Key Features') }}
+                        </h2>
+                        <p class="mt-10 variant7">
+                            {{ $t('Lorem ipsum dolor sit.') }}
+                        </p>
+                        <p class="mt-10 variant7">
+                            {{ $t('Lorem ipsum dolor sit.') }}
+                        </p>
+                        <p class="mt-10 variant7">
+                            {{ $t('Lorem ipsum dolor sit.') }}
+                        </p>
+                        <p class="mt-10 variant7">
+                            {{ $t('Lorem ipsum dolor sit.') }}
+                        </p>
                         <h2 class="variant6 mt-20">Advanced support</h2>
-                        <p class="mt-10 variant7">Lorem ipsum dolor sit.</p>
-                        <p class="mt-10 variant7">Lorem ipsum dolor sit.</p>
-                        <p class="mt-10 variant7">Lorem ipsum dolor sit.</p>
-                        <p class="my-10 variant7">Lorem ipsum dolor sit.</p>
+                        <p class="mt-10 variant7">
+                            {{ $t('Lorem ipsum dolor sit.') }}
+                        </p>
+                        <p class="mt-10 variant7">
+                            {{ $t('Lorem ipsum dolor sit.') }}
+                        </p>
+                        <p class="mt-10 variant7">
+                            {{ $t('Lorem ipsum dolor sit.') }}
+                        </p>
+                        <p class="mt-10 variant7">
+                            {{ $t('Lorem ipsum dolor sit.') }}
+                        </p>
                     </div>
                     <div v-for="tier in tiers" :key="tier.id" class="bg-primary">
-                        <div class="bg-white p-6">
+                        <div class="bg-white p-5">
                             <h3 :id="tier.id" class="font-semibold leading-7 text-gray-350">
                                 {{ $t(tier.name) }}
                             </h3>
-                            <p class="mt-4 mb-4 flex items-baseline gap-x-1">
+                            <p class="mt-4 mb-4 flex items-center gap-x-1">
                                 <span class="text-4xl font-medium tracking-tight text-gray-350">
                                     {{ tier.price.monthly }}
                                 </span>
-                                <span class="text-sm font-semibold leading-6 text-gray-350 ml-3">/ {{ $t('month') }}</span>
+                                <span class="text-sm font-semibold leading-6 text-gray-250 ml-3">
+                                    / {{ $t('maand') }}
+                                </span>
                             </p>
-                            <ul role="list" class="mt-2.5 space-y-3 text-sm leading-6 text-gray-600">
-                                <li v-for="feature in tier.features" :key="feature" class="flex gap-x-3">
-                                    <CheckCircleIcon class="h-6 w-6 flex-none text-gray-350" aria-hidden="true" />
-                                    {{ $t(feature) }}
+                            <div class="w-full px-4">
+                                <button class="text-sm p-3 mt-7 w-full bg-secondary text-white hover:bg-gray-250">
+                                    {{ $t('Bestel') }}
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center justify-center pt-20">
+                            <img src="./../assets/tickLg.png" alt="tick" class="w-10">
+                            <p class="mt-11 variant8">{{ tier.ram }}</p>
+                            <ul role="list" class="text-sm leading-6 text-gray-600 flex items-center flex-col">
+                                <li v-for="icon in tier.features.slice(0, 2)" :key="feature" class="mt-10">
+                                    <img :src="icon" alt="icon">
                                 </li>
                             </ul>
-                            <button class="w-full p-3 mt-7 text-secondary border border-secondary hover:text-gray-250">
-                                {{ $t('Bestel') }}
-                            </button>
+                            <ul role="list" class="text-sm mt-28 mb-4 leading-6 text-gray-600 flex items-center flex-col">
+                                <li v-for="icon in tier.features.slice(2, 6)" :key="feature" class="mt-10">
+                                    <img :src="icon" alt="icon">
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -59,29 +89,27 @@
 </template>
   
 <script setup>
-import { CheckCircleIcon } from '@heroicons/vue/20/solid'
+import tick from './../assets/tickLg.png'
+import cross from './../assets/cross.png'
 
 const tiers = [
     {
         name: 'Starter',
-        ram: '4GB Ram',
-        href: '#',
+        ram: '10 GB',
         price: { monthly: '€ 3,50' },
-        features: ['4 GB Ram', '4 CPU Cores', '50 GB SSD', 'No limit traffic'],
+        features: [cross, cross, tick, cross, cross, cross],
     },
     {
         name: 'Nerd',
-        ram: '8GB Ram',
-        href: '#',
+        ram: '20 GB',
         price: { monthly: '€ 5,50' },
-        features: ['8 GB Ram', '6 CPU Cores', '75 GB SSD', 'No limit traffic'],
+        features: [tick, cross, tick, tick, tick, cross],
     },
     {
         name: 'Geek',
-        ram: '16GB Ram',
-        href: '#',
+        ram: 'Unlimited',
         price: { monthly: '€ 7,50' },
-        features: ['16 GB Ram', '8 CPU Cores', '100 GB SSD', 'No limit traffic'],
+        features: [tick, tick, tick, tick, tick, tick],
     },
 ]
 </script>

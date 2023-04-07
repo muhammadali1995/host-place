@@ -15,7 +15,7 @@ body {
 }
 
 @layer components {
-    .container {
+    .cont {
         @apply lg:px-32 md:px-20 sm:px-10 px-4
     }
     .variant1 {
