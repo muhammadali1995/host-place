@@ -29,7 +29,7 @@
                 class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                 <div class="flex items-center justify-between">
                     <a href="#" class="-m-1.5 p-1.5">
-                        <img class="h-8 w-auto" src="./../assets/logo.png" alt="logo" />
+                        <img class="h-8 w-auto" src="../../assets/logo.png" alt="logo" />
                     </a>
                     <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
                         <XMarkIcon class="h-6 w-6" aria-hidden="true" />
@@ -60,7 +60,7 @@ import { Dialog, DialogPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 
 const navigation = [
-    { name: 'VPS', href: '/details' },
+    { name: 'VPS', href: '/vps' },
     { name: 'Webhosting & Domein', href: '/webhosting' },
     { name: 'Dedicated Server & Colo', href: '#' },
     { name: 'Reseller', href: '#' },

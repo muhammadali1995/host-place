@@ -14,7 +14,7 @@
                 {{ $t('Learn more') }}
             </button>
         </div>
-        <img src="../../assets/image.png" alt="banner" class="mt-6 lg:mt-0">
+        <img src="../../assets/image.png" alt="banner" class="mt-6 lg:mt-0 lg:ml-4">
     </div>
     <div class="flex justify-center pt-20 sm:gap-12 gap-5">
         <div v-for="product in products" :key="product.name"

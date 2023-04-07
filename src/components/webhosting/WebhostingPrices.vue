@@ -8,12 +8,11 @@
                 {{ $t('Snelle en stabiele shared webhosting oplossingen') }}
             </p>
             <div class="p-1 flex items-center bg-gray-150 max-w-fit mx-auto mt-7">
-                <button type="button" class="px-5 py-2 text-sm bg-white text-gray-350 hover:bg-gray-550 hover:text-white">{{
-                    $t('Monthly') }}
+                <button :onclick="(e) => changeActiveTab(e, 1)" :class="(activeTab == 1) ? darkBtn : lightBtn">
+                    {{ $t('Monthly') }}
                 </button>
-                <button type="button"
-                    class="px-5 py-2 text-sm bg-gray-150 text-gray-350 hover:bg-gray-550 hover:text-white">{{
-                        $t('Yearly') }}
+                <button :onclick="(e) => changeActiveTab(e, 2)" :class="(activeTab == 2) ? darkBtn : lightBtn">
+                    {{ $t('Yearly') }}
                 </button>
             </div>
             <div class="mt-10 flow-root lg:-mx-8">
@@ -91,6 +90,20 @@
 <script setup>
 import tick from '../../assets/tickLg.png'
 import cross from '../../assets/cross.png'
+
+let activeTab = 1
+
+const darkBtn = 'px-5 py-2 text-sm bg-white text-gray-350 switch'
+const lightBtn = 'px-5 py-2 text-sm bg-gray-150 text-gray-350 switch'
+
+const changeActiveTab = (e, num) => {
+    activeTab = num
+    const btns = document.querySelectorAll('.switch')
+    Array.from(btns).map(e => {
+        e.className = lightBtn
+    })
+    e.target.className = darkBtn
+}
 
 const tiers = [
     {

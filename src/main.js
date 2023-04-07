@@ -10,14 +10,14 @@ import { messages } from './translation.json'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const i18n = createI18n({
-    locale: 'en',
+    locale: 'english',
     fallbackLocale: 'en',
     messages
 })
 
 const routes = [
     { path: '/', component: Home },
-    { path: '/details', component: Details },
+    { path: '/vps', component: Details },
     { path: '/webhosting', component: Webhosting },
 ]
 

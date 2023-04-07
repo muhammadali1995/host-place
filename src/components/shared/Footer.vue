@@ -47,7 +47,7 @@
                                 <EnvelopeIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
                             </div>
                             <input type="email" name="email" id="email"
-                                class="block w-full border border-gray-150 outline-none py-2 pl-10 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                                class="block w-full border border-gray-150 !outline-none py-2 pl-10 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
                                 :placeholder="$t('Input your email')" />
                         </div>
                         <button type="submit"
@@ -68,10 +68,11 @@
                     {{ $t('2022 Brand, Inc . Privacy . Terms . Sitemap') }}
                 </p>
                 <div>
-                    <select id="lang" name="lang"
+                    <select v-model="$i18n.locale" id="lang" name="lang"
                         class="w-full py-1.5 pl-3 pr-10 text-gray-250 border border-gray-150 outline-none bg-transparent sm:text-sm sm:leading-6">
-                        <option>{{ $t('English') }}</option>
-                        <option>{{ $t('Russian') }}</option>
+                        <option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang">
+                            {{ $t(lang) }}
+                        </option>
                     </select>
                 </div>
             </div>
@@ -82,6 +83,8 @@
 <script setup>
 import { defineComponent, h } from 'vue'
 import { EnvelopeIcon } from '@heroicons/vue/20/solid'
+
+const langs = ['english', 'dutch']
 
 const navigation = {
     product: [
