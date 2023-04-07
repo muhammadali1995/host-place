@@ -1,25 +1,24 @@
 <template>
     <header class="bg-primary">
-        <nav class="flex items-center justify-between p-4 lg:px-6" aria-label="Global">
+        <nav class="flex items-center justify-between p-4 lg:px-6">
             <div class="flex lg:flex-1">
-                <a href="#" class="-m-1.5 p-1.5">
+                <a href="/" class="-m-1.5 p-1.5">
                     <img class="h-8 w-auto" src="./../assets/logo.png" alt="logo" />
                 </a>
             </div>
             <div class="flex lg:hidden">
                 <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
                     @click="mobileMenuOpen = true">
-                    <span class="sr-only">Open main menu</span>
                     <Bars3Icon class="h-6 w-6" aria-hidden="true" />
                 </button>
             </div>
             <div class="hidden lg:flex lg:gap-x-10">
-                <a v-for="item in navigation" :key="item.name" :href="item.href"
-                    class="text-sm font-medium leading-6 text-secondary">{{ $t(item.name) }}</a>
+                <a v-for="item in navigation" :key="item.name" :href="item.href" class="variant1">{{ $t(item.name) }}</a>
             </div>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                <button type="button" class="bg-transparent px-5 py-2 text-sm text-secondary hover:bg-gray-150 mr-3">{{
-                    $t('Sign in') }}</button>
+                <button type="button" class="bg-transparent px-5 py-2 hover:bg-gray-150 mr-3 variant1">
+                    {{ $t('Sign in') }}
+                </button>
                 <button type="button" class="bg-secondary px-5 py-2 text-sm text-white hover:bg-gray-250">
                     {{ $t('Sign up') }}</button>
             </div>
@@ -33,7 +32,6 @@
                         <img class="h-8 w-auto" src="./../assets/logo.png" alt="logo" />
                     </a>
                     <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
-                        <span class="sr-only">Close menu</span>
                         <XMarkIcon class="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
@@ -63,7 +61,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import Button from './Button.vue';
 
 const navigation = [
-    { name: 'VPS', href: '#' },
+    { name: 'VPS', href: '/details' },
     { name: 'Webhosting & Domein', href: '#' },
     { name: 'Dedicated Server & Colo', href: '#' },
     { name: 'Reseller', href: '#' },

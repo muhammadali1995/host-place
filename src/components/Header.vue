@@ -1,10 +1,10 @@
 <template>
-    <div class="relative overflow-hidden py-24 flex items-center justify-between px-4 xl:px-32 flex-col lg:flex-row">
+    <div class="relative overflow-hidden  flex items-center justify-between py-24 flex-col lg:flex-row container">
         <div>
-            <h2 class="text-4xl font-bold !leading-tight sm:text-6xl text-350">
+            <h2 class="variant2">
                 {{ $t('Voor developers, door developers') }}
             </h2>
-            <p class="mt-6 text-xl leading-8 text-350">
+            <p class="mt-6 variant3">
                 {{ $t('API driven, hoge performance voor een aantrekkelijkeprijs') }}
             </p>
             <button type="button" class="bg-secondary px-5 py-2 text-md text-white hover:bg-gray-250 mt-14 mr-3">
@@ -17,10 +17,10 @@
         <img src="./../assets/image.png" alt="banner" class="mt-6 lg:mt-0">
     </div>
     <div class="flex justify-center pt-20 sm:gap-12 gap-5">
-        <div v-for="item in products" :key="item.name"
-            class="text-sm sm:gap-4 font-normal flex items-center flex-col justify-between leading-6 text-gray-250">
-            <img v-bind:src="item.img" v-bind:alt="item.img" class="w-10 sm:w-auto">
-            <h4>{{ $t(item.name) }}</h4>
+        <div v-for="product in products" :key="product.name"
+            class="sm:gap-4 flex items-center flex-col justify-between variant4">
+            <img v-bind:src="product.img" v-bind:alt="product.img" class="w-10 sm:w-auto">
+            <h4>{{ $t(product.name) }}</h4>
         </div>
     </div>
 </template>

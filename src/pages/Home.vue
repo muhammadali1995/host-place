@@ -7,9 +7,6 @@ import Testimonial from '../components/Testimonial.vue';
 import Contact from '../components/Contact.vue';
 import Footer from '../components/Footer.vue';
 </script>
-<script>
-export const theme = 'theme-default'
-</script>
 
 
 <template>

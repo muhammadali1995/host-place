@@ -5,9 +5,8 @@
                 <p class="text-3xl font-bold tracking-tight text-center text-gray-350 sm:text-4xl">
                     {{ $t('Meer Vragen') }}
                 </p>
-                <button type="button"
-                    class="px-5 mt-5 py-2 text-sm bg-gray-450 text-gray-250 hover:bg-gray-650">{{
-                        $t('Neem contact op') }}
+                <button type="button" class="px-5 mt-5 py-2 text-sm bg-gray-450 text-gray-250 hover:bg-gray-650">{{
+                    $t('Neem contact op') }}
                 </button>
             </div>
             <img src="./../assets/image.png" alt="image" class="md:flex-1 md:bg-cover md:max-h-96">

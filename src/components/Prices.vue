@@ -1,10 +1,10 @@
 <template>
     <div class="bg-white py-12 sm:py-24">
         <div class="mx-auto max-w-7xl">
-            <p class="text-3xl font-bold tracking-tight text-center text-gray-350 sm:text-5xl">
+            <p class="text-center variant5">
                 {{ $t('Virtual Private Server') }}
             </p>
-            <p class="text-md leading-8 text-gray-350 text-center">
+            <p class="text-center variant7">
                 {{ $t('De basis voor ieder development project') }}
             </p>
             <div class="p-1 flex items-center bg-gray-150 max-w-fit mx-auto mt-7">
@@ -31,8 +31,9 @@
                                 {{ $t(feature) }}
                             </li>
                         </ul>
-                        <button
-                            class="w-full p-3 mt-7 text-secondary border border-secondary hover:text-gray-250">{{ $t('Bestel') }}</button>
+                        <button class="w-full p-3 mt-7 text-secondary border border-secondary hover:text-gray-250">
+                            {{ $t('Bestel') }}
+                        </button>
                     </div>
                 </div>
             </div>

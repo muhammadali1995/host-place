@@ -1,51 +1,59 @@
 <template>
     <footer class="bg-primary" aria-labelledby="footer-heading">
-        <div class="lg:pt-24 py-8 lg:px-28 px-4">
+        <div class="lg:pt-24 py-8 container">
             <div class="lg:flex items-start justify-between">
                 <img src="./../assets/foot_logo.png" alt="logo" class="hidden lg:block">
                 <div class="grid grid-cols-3 gap-7">
                     <div>
-                        <h3 class="text-xl font-semibold leading-6 text-gray-350"> {{ $t('Product') }}</h3>
+                        <h3 class="variant10">
+                            {{ $t('Product') }}
+                        </h3>
                         <ul role="list" class="mt-6 space-y-4">
                             <li v-for="item in navigation.product" :key="item.name">
-                                <a :href="item.href" class="text-sm leading-6 text-gray-250 hover:text-gray-900">{{
-                                    $t(item.name) }}</a>
+                                <a :href="item.href" class="variant4 hover:text-gray-900">
+                                    {{ $t(item.name) }}</a>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold leading-6 text-gray-350">{{ $t('Resources') }}</h3>
+                        <h3 class="variant10">{{ $t('Resources') }}</h3>
                         <ul role="list" class="mt-6 space-y-4">
                             <li v-for="item in navigation.resources" :key="item.name">
-                                <a :href="item.href" class="text-sm leading-6 text-gray-250 hover:text-gray-900">{{
-                                    $t(item.name) }}</a>
+                                <a :href="item.href" class="variant4 hover:text-gray-900">
+                                    {{ $t(item.name) }}</a>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold leading-6 text-gray-350">{{ $t('Company') }}</h3>
+                        <h3 class="variant10">{{ $t('Company') }}</h3>
                         <ul role="list" class="mt-6 space-y-4">
                             <li v-for="item in navigation.company" :key="item.name">
-                                <a :href="item.href" class="text-sm leading-6 text-gray-250 hover:text-gray-900">{{
-                                    $t(item.name) }}</a>
+                                <a :href="item.href" class="variant4 hover:text-gray-900">
+                                    {{ $t(item.name) }}</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="lg:mt-0 mt-6">
-                    <h3 class="text-xl font-semibold leading-6 text-gray-350">{{ $t('Subscribe to our newsletter') }}</h3>
-                    <p class="mt-2 text-xs leading-6 text-gray-350">{{ $t('For product announcements and exclusive insights') }}</p>
+                    <h3 class="variant10">
+                        {{ $t('Subscribe to our newsletter') }}
+                    </h3>
+                    <p class="mt-2 text-xs leading-6 text-gray-350">
+                        {{ $t(`For product announcements and exclusive insights`) }}
+                    </p>
                     <form class="mt-6 flex w-full lg:mb-0 mb-6">
                         <div class="relative rounded-md shadow-sm">
-                            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3">
                                 <EnvelopeIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
                             </div>
                             <input type="email" name="email" id="email"
                                 class="block w-full border border-gray-150 outline-none py-2 pl-10 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
-                                placeholder="Input your email" />
+                                :placeholder="$t('Input your email')" />
                         </div>
                         <button type="submit"
-                            class="flex items-center justify-center bg-secondary px-3 text-sm font-semibold text-white">{{ $t('Subscribe') }}</button>
+                            class="flex items-center justify-center bg-secondary px-3 text-sm font-semibold text-white">
+                            {{ $t('Subscribe') }}
+                        </button>
                     </form>
                 </div>
             </div>
@@ -53,7 +61,6 @@
                 <div class="flex space-x-6 md:order-2">
                     <a v-for="item in navigation.social" :key="item.name" :href="item.href"
                         class="text-gray-400 hover:text-gray-500">
-                        <span class="sr-only">{{ item.name }}</span>
                         <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
                     </a>
                 </div>

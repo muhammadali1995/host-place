@@ -1,14 +1,13 @@
 <template>
-    <h1 class="font-semibold mt-20 lg:mt-52 text-center text-5xl text-gray-350">
+    <h1 class="mt-20 lg:mt-52 text-center variant5">
         {{ $t('Wat jij belangrijk vindt') }}
     </h1>
-    <p class="text-md text-gray-350 max-w-xl mx-auto text-center">
-        {{ $t(`
-                Nisi irure nisi mollit exercitation cupidatat excepteur.
+    <p class="max-w-xl mx-auto text-center variant7">
+        {{ $t(`Nisi irure nisi mollit exercitation cupidatat excepteur.
                 Lorem in ullamco reprehenderit exercitation sunt non tempor
                 exercitation exercitation`) }}
     </p>
-    <div class="flex lg:flex-row flex-col lg:items-center lg:justify-between mt-24 px-4 xl:px-32">
+    <div class="flex lg:flex-row flex-col lg:items-center lg:justify-between mt-24 container">
         <div>
             <h1 class="font-semibold text-4xl text-gray-350 text-center lg:text-left">
                 {{ $t('High Performance') }}
