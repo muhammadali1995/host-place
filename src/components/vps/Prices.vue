@@ -41,6 +41,7 @@
 </template>
   
 <script setup>
+import { Swiper, SwiperSlide } from 'swiper/vue';
 let activeTab = 1
 
 const darkBtn = 'px-5 py-2 text-sm bg-white text-gray-350 switch'
