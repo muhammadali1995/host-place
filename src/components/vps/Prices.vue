@@ -17,11 +17,30 @@
             </div>
             <div class="mt-10 flow-root lg:-mx-8">
                 <Swiper :slides-per-view="4" :space-between="10" :loop="true"
-                    class="isolate relative grid gap-2.5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+                    class="isolate relative grid gap-2.5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 swip">
                     <button class="absolute bottom-1/2 left-0 rotate-180" @click="swiper.slidePrev()">
                         <img src="./../../assets/arrow-right.png" alt="arrow">
                     </button>
-                    <SwiperSlide v-for="tier in tiers" :key="tier.id" class="p-6 bg-primary cursor-pointer hover:scale-105 duration-300">
+                    <SwiperSlide v-if="activeTab == 1" v-for="tier in tiers" :key="tier.id"
+                        class="p-6 bg-primary cursor-pointer hover:scale-105 duration-300">
+                        <h3 :id="tier.id" class="text-3xl font-semibold leading-7 text-gray-350">{{ $t(tier.name) }}</h3>
+                        <p :id="tier.id" class="text-gray-350">{{ $t(tier.ram) }}</p>
+                        <p class="mt-4 mb-4 flex items-baseline gap-x-1">
+                            <span class="text-4xl font-bold tracking-tight text-gray-350">{{ tier.price.monthly }}</span>
+                            <span class="text-sm font-semibold leading-6 text-gray-350 ml-5">/ {{ $t('month') }}</span>
+                        </p>
+                        <ul role="list" class="mt-2.5 space-y-3 text-sm leading-6 text-gray-600">
+                            <li v-for="feature in tier.features" :key="feature" class="flex gap-x-3">
+                                <img src="../../assets/tick.png" class="h-6 w-6 flex-none text-gray-350" alt="image">
+                                {{ $t(feature) }}
+                            </li>
+                        </ul>
+                        <button class="w-full p-3 mt-7 text-secondary border border-secondary hover:text-gray-250">
+                            {{ $t('Bestel') }}
+                        </button>
+                    </SwiperSlide>
+                    <SwiperSlide v-for="tier in tiers2" class="p-6 bg-primary cursor-pointer hover:scale-105 duration-300"
+                        v-else>
                         <h3 :id="tier.id" class="text-3xl font-semibold leading-7 text-gray-350">{{ $t(tier.name) }}</h3>
                         <p :id="tier.id" class="text-gray-350">{{ $t(tier.ram) }}</p>
                         <p class="mt-4 mb-4 flex items-baseline gap-x-1">
@@ -122,5 +141,14 @@ const tiers = [
         price: { monthly: '€49' },
         features: ['16 GB Ram', '8 CPU Cores', '100 GB SSD', 'No limit traffic'],
     },
+]
+const tiers2 = [
+    {
+        name: '1122',
+        ram: '2GB Ram',
+        href: '#',
+        price: { monthly: '€9' },
+        features: ['2 GB Ram', '2 CPU Cores', '25 GB SSD', 'No limit traffic'],
+    }
 ]
 </script>
