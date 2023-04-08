@@ -10,7 +10,7 @@
             </p>
             <ul role="list"
                 class="mx-auto mt-11 grid grid-cols-1 gap-6 lg:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4">
-                <li v-for="promise in promises" :key="promise.name" class="bg-primary">
+                <li v-for="promise in promises" :key="promise.name" class="bg-primary hover:scale-105 duration-300 cursor-pointer">
                     <img :src="promise.imageUrl" alt="image" class="mt-16 mx-auto mb-14" />
                     <div class="p-6">
                         <h3 class="variant8 text-center">

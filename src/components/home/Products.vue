@@ -6,7 +6,10 @@
             </h2>
             <ul role="list" class="mt-20 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 <li v-for="product in products" :key="product.name" class="bg-primary">
-                    <img class="aspect-[3/2] w-full object-cover" :src="product.imageUrl" alt="image" />
+                    <div class="overflow-hidden cursor-pointer">
+                        <img class="aspect-[3/2] w-full object-cover hover:scale-105 duration-300" :src="product.imageUrl"
+                            alt="image" />
+                    </div>
                     <div class="p-6">
                         <h3 class="variant6">{{ $t(product.name) }}</h3>
                         <p class="mt-1 variant7">{{ $t(product.role) }}</p>

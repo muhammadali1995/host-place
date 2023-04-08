@@ -59,6 +59,18 @@ body {
     padding: 0;
 }
 
+.swiper-wrapper {
+        display: flex;
+        width: fit-content;
+}
+
+.swiper-slide{
+    display: inline-block;
+}
+.testi *{
+    overflow: hidden !important;
+}
+
 input:focus {
     border: 1px solid #DEE1E6FF !important;
     box-shadow: none !important;

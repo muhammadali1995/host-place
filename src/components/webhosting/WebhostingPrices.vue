@@ -47,7 +47,7 @@
                             {{ $t('Lorem ipsum dolor sit.') }}
                         </p>
                     </div>
-                    <div v-for="tier in tiers" :key="tier.id" class="bg-primary">
+                    <div v-for="tier in tiers" :key="tier.id" class="bg-primary duration-300 hover:scale-[101%] cursor-pointer">
                         <div class="bg-white p-5">
                             <h3 :id="tier.id" class="font-semibold leading-7 text-gray-350">
                                 {{ $t(tier.name) }}

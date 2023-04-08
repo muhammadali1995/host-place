@@ -16,8 +16,12 @@
                 </button>
             </div>
             <div class="mt-10 flow-root lg:-mx-8">
-                <div class="isolate grid gap-2.5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-                    <div v-for="tier in tiers" :key="tier.id" class="p-6 bg-primary">
+                <Swiper :slides-per-view="4" :space-between="10" :loop="true"
+                    class="isolate relative grid gap-2.5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+                    <button class="absolute bottom-1/2 left-0 rotate-180" @click="swiper.slidePrev()">
+                        <img src="./../../assets/arrow-right.png" alt="arrow">
+                    </button>
+                    <SwiperSlide v-for="tier in tiers" :key="tier.id" class="p-6 bg-primary cursor-pointer hover:scale-105 duration-300">
                         <h3 :id="tier.id" class="text-3xl font-semibold leading-7 text-gray-350">{{ $t(tier.name) }}</h3>
                         <p :id="tier.id" class="text-gray-350">{{ $t(tier.ram) }}</p>
                         <p class="mt-4 mb-4 flex items-baseline gap-x-1">
@@ -33,16 +37,21 @@
                         <button class="w-full p-3 mt-7 text-secondary border border-secondary hover:text-gray-250">
                             {{ $t('Bestel') }}
                         </button>
-                    </div>
-                </div>
+                    </SwiperSlide>
+                    <button class="absolute bottom-1/2 right-0" @click="swiper.slideNext()">
+                        <img src="./../../assets/arrow-right.png" alt="arrow">
+                    </button>
+                </Swiper>
             </div>
         </div>
     </div>
 </template>
   
 <script setup>
-import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue';
 let activeTab = 1
+
+const swiper = useSwiper()
 
 const darkBtn = 'px-5 py-2 text-sm bg-white text-gray-350 switch'
 const lightBtn = 'px-5 py-2 text-sm bg-gray-150 text-gray-350 switch'
@@ -57,6 +66,34 @@ const changeActiveTab = (e, num) => {
 }
 
 const tiers = [
+    {
+        name: 'Geeks',
+        ram: '2GB Ram',
+        href: '#',
+        price: { monthly: '€9' },
+        features: ['2 GB Ram', '2 CPU Cores', '25 GB SSD', 'No limit traffic'],
+    },
+    {
+        name: 'Nerds',
+        ram: '4GB Ram',
+        href: '#',
+        price: { monthly: '€19' },
+        features: ['4 GB Ram', '4 CPU Cores', '50 GB SSD', 'No limit traffic'],
+    },
+    {
+        name: 'Code Wizards',
+        ram: '8GB Ram',
+        href: '#',
+        price: { monthly: '€29' },
+        features: ['8 GB Ram', '6 CPU Cores', '75 GB SSD', 'No limit traffic'],
+    },
+    {
+        name: 'Server Sorcerers',
+        ram: '16GB Ram',
+        href: '#',
+        price: { monthly: '€49' },
+        features: ['16 GB Ram', '8 CPU Cores', '100 GB SSD', 'No limit traffic'],
+    },
     {
         name: 'Geeks',
         ram: '2GB Ram',
