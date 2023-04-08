@@ -47,7 +47,43 @@
                             {{ $t('Lorem ipsum dolor sit.') }}
                         </p>
                     </div>
-                    <div v-for="tier in tiers" :key="tier.id" class="bg-primary duration-300 hover:scale-[101%] cursor-pointer">
+                    <div v-if="activeTab==1" v-for="tier in tiers" :key="tier.id"
+                        class="bg-primary duration-300 hover:scale-[101%] cursor-pointer">
+                        <div class="bg-white p-5">
+                            <h3 :id="tier.id" class="font-semibold leading-7 text-gray-350">
+                                {{ $t(tier.name) }}
+                            </h3>
+                            <p class="mt-4 mb-4 flex items-center gap-x-1">
+                                <span class="text-4xl font-medium tracking-tight text-gray-350">
+                                    {{ tier.price.monthly }}
+                                </span>
+                                <span class="text-sm font-semibold leading-6 text-gray-250 ml-3">
+                                    / {{ $t('maand') }}
+                                </span>
+                            </p>
+                            <div class="w-full px-4">
+                                <button class="text-sm p-3 mt-7 w-full bg-secondary text-white hover:bg-gray-250">
+                                    {{ $t('Bestel') }}
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center justify-center pt-20">
+                            <img src="../../assets/tickLg.png" alt="tick" class="w-10">
+                            <p class="mt-11 variant8">{{ tier.ram }}</p>
+                            <ul role="list" class="text-sm leading-6 text-gray-600 flex items-center flex-col">
+                                <li v-for="icon in tier.features.slice(0, 2)" :key="feature" class="mt-10">
+                                    <img :src="icon" alt="icon">
+                                </li>
+                            </ul>
+                            <ul role="list" class="text-sm mt-28 mb-4 leading-6 text-gray-600 flex items-center flex-col">
+                                <li v-for="icon in tier.features.slice(2, 6)" :key="feature" class="mt-10">
+                                    <img :src="icon" alt="icon">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div v-for="tier in tiers2" v-else
+                        class="bg-primary duration-300 hover:scale-[101%] cursor-pointer">
                         <div class="bg-white p-5">
                             <h3 :id="tier.id" class="font-semibold leading-7 text-gray-350">
                                 {{ $t(tier.name) }}
@@ -90,14 +126,15 @@
 <script setup>
 import tick from '../../assets/tickLg.png'
 import cross from '../../assets/cross.png'
+import { ref } from 'vue'
 
-let activeTab = 1
+let activeTab = ref(1)
 
 const darkBtn = 'px-5 py-2 text-sm bg-white text-gray-350 switch'
 const lightBtn = 'px-5 py-2 text-sm bg-gray-150 text-gray-350 switch'
 
 const changeActiveTab = (e, num) => {
-    activeTab = num
+    activeTab.value = num
     const btns = document.querySelectorAll('.switch')
     Array.from(btns).map(e => {
         e.className = lightBtn
@@ -108,6 +145,26 @@ const changeActiveTab = (e, num) => {
 const tiers = [
     {
         name: 'Starter',
+        ram: '10 GB',
+        price: { monthly: '€ 3,50' },
+        features: [cross, cross, tick, cross, cross, cross],
+    },
+    {
+        name: 'Nerd',
+        ram: '20 GB',
+        price: { monthly: '€ 5,50' },
+        features: [tick, cross, tick, tick, tick, cross],
+    },
+    {
+        name: 'Geek',
+        ram: 'Unlimited',
+        price: { monthly: '€ 7,50' },
+        features: [tick, tick, tick, tick, tick, tick],
+    },
+]
+const tiers2 = [
+    {
+        name: 'test',
         ram: '10 GB',
         price: { monthly: '€ 3,50' },
         features: [cross, cross, tick, cross, cross, cross],

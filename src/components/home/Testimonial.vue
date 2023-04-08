@@ -31,14 +31,14 @@
                                 <div class="font-normal text-gray-350 text-md">{{ $t('Job title') }}</div>
                             </div>
                             <div class="flex items-center">
-                                <button @click="swiper.value.slidePrev()">
+                                <button @click="swiper.slidePrev()">
                                     <img src="./../../assets/arrow-rectangle.png" alt="arrow">
                                 </button>
-                                <div class="w-2.5 h-2.5 bg-gray-150 ml-1.5 cursor-pointer" @click="swiper.value.slideTo(0)">
+                                <div class="w-2.5 h-2.5 bg-gray-150 ml-1.5 cursor-pointer" @click="swiper.slideTo(0)">
                                 </div>
-                                <div class="w-2.5 h-2.5 bg-gray-150 ml-1.5 cursor-pointer" @click="swiper.value.slideTo(1)">
+                                <div class="w-2.5 h-2.5 bg-gray-150 ml-1.5 cursor-pointer" @click="swiper.slideTo(1)">
                                 </div>
-                                <button @click="swiper.value.slidePrev()">
+                                <button @click="swiper.slidePrev()">
                                     <img src="./../../assets/arrow-rectangle.png" alt="arrow" class="rotate-180 ml-1.5">
                                 </button>
                             </div>

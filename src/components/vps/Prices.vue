@@ -66,17 +66,16 @@
     </div>
 </template>
   
-<script setup>
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue';
-let activeTab = 1
-
-const swiper = useSwiper()
+<script>
+import {Swiper, SwiperSlide, useSwiper } from 'swiper/vue';
+import { ref } from 'vue';
+let activeTab = ref(1)
 
 const darkBtn = 'px-5 py-2 text-sm bg-white text-gray-350 switch'
 const lightBtn = 'px-5 py-2 text-sm bg-gray-150 text-gray-350 switch'
 
 const changeActiveTab = (e, num) => {
-    activeTab = num
+    activeTab.value = num
     const btns = document.querySelectorAll('.switch')
     Array.from(btns).map(e => {
         e.className = lightBtn
@@ -151,4 +150,24 @@ const tiers2 = [
         features: ['2 GB Ram', '2 CPU Cores', '25 GB SSD', 'No limit traffic'],
     }
 ]
+
+export default {
+    components: {
+      Swiper,
+      SwiperSlide,
+    },
+    setup() {
+        const swiper = useSwiper();
+
+        return {
+            swiper,
+            changeActiveTab,
+            activeTab,
+            darkBtn,
+            lightBtn,
+            tiers,
+            tiers2
+        };
+    },
+};
 </script>
