@@ -34,9 +34,11 @@
                                 <button @click="() => slidePrev()">
                                     <img src="./../../assets/arrow-rectangle.png" alt="arrow">
                                 </button>
-                                <div class="w-2.5 h-2.5 bg-gray-150 ml-1.5 cursor-pointer" @click="slidePrev()">
+                                <div :class="'h-2.5 ml-1.5 cursor-pointer ' + ((slideIndex === 0) ? 'w-5 bg-gray-750' : 'w-2.5 bg-gray-150')"
+                                    @click="slidePrev()">
                                 </div>
-                                <div class="w-2.5 h-2.5 bg-gray-150 ml-1.5 cursor-pointer" @click="slideNext()">
+                                <div :class="'h-2.5 ml-1.5 cursor-pointer ' + ((slideIndex === 1) ? 'w-5 bg-gray-750' : 'w-2.5 bg-gray-150')"
+                                    @click="slideNext()">
                                 </div>
                                 <button @click="() => slideNext()">
                                     <img src="./../../assets/arrow-rectangle.png" alt="arrow" class="rotate-180 ml-1.5">
@@ -63,18 +65,21 @@
 <script setup>
 import { StarIcon } from '@heroicons/vue/20/solid'
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import { ref } from 'vue';
+let slideIndex = ref(0)
 
 const slidePrev = () => {
     const swiper = document.querySelector('.swiper-wrapper')
     const swipe = document.getElementById('swiper')
     swiper.style.transform = `translate3d(0, 0px, 0px)`
     swiper.style.transitionDuration = '300ms'
+    slideIndex.value = 0
 }
 const slideNext = () => {
     const swiper = document.querySelector('.swiper-wrapper')
     const swipe = document.getElementById('swiper')
     swiper.style.transform = `translate3d(-${swipe.getBoundingClientRect().width}px, 0px, 0px)`
     swiper.style.transitionDuration = '300ms'
-    
+    slideIndex.value = 1
 }
 </script>

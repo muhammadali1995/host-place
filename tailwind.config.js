@@ -18,7 +18,8 @@ export default {
           350: '#171A1FFF',
           450:'#CFD2DAFF',
           550:'#6F7787FF',
-          650:'#A7ADB7FF'
+          650:'#A7ADB7FF',
+          750:'#9095A0FF'
         }
       }
     },
