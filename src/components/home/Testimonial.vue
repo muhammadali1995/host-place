@@ -3,8 +3,8 @@
         <h3 class="text-center mb-8 variant9">
             {{ $t('Testimonials van blije klanten zodra we die hebben') }}
         </h3>
-        <swiper :loop="true" :space-between="10" id="swiper">
-            <SwiperSlide v-for="i in [1, 2]">
+        <swiper :loop="true" :space-between="10" id="swiper" class="max-w-[100vw] overflow-hidden">
+            <SwiperSlide v-for="i in [1, 2]" :key="i">
                 <div class="flex lg:flex-row flex-col-reverse sm:justify-between justify-center items-center">
                     <div class="relative max-w-[280px] mr-24">
                         <img src="../../assets/shadow.png" alt="image" class="absolute top-1 left-6">
@@ -62,35 +62,39 @@
 
 <script setup>
 import { StarIcon } from '@heroicons/vue/20/solid'
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 import { ref } from 'vue';
 let activeSlide = ref(0)
 
 const slideNext = () => {
+    console.log(activeSlide)
     const swiper = document.getElementById('swiper')
-    if (activeSlide.value === 0) {
-        swiper.children[0].children[activeSlide.value].scrollIntoView()
-        activeSlide.value = 1
+    if (activeSlide.value === 1) {
+        swiper.children[0].children[0].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+        activeSlide.value = 0
     }
     else {
-        swiper.children[0].children[activeSlide.value].scrollIntoView()
-        activeSlide.value = 0
+        swiper.children[0].children[1].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+        activeSlide.value = 1
     }
 }
 const slidePrev = () => {
+    console.log(activeSlide)
     const swiper = document.getElementById('swiper')
-    if (activeSlide.value === 1) {
-        swiper.children[0].children[activeSlide.value].scrollIntoView()
-        activeSlide.value = 0
+    if (activeSlide.value === 0) {
+        swiper.children[0].children[1].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+        activeSlide.value = 1
     }
     else {
-        swiper.children[0].children[activeSlide.value].scrollIntoView()
-        activeSlide.value = 1
+        swiper.children[0].children[0].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+        activeSlide.value = 0
     }
 }
 const paginate = (index) => {
-    const swiper = document.getElementById('swiper')
-    swiper.children[0].children[index].scrollIntoView()
+    console.log('start')
 
+    const swiper = document.getElementById('swiper')
+    swiper.children[0].children[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+    activeSlide.value = index
 }
 </script>

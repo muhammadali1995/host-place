@@ -78,30 +78,30 @@ const lightBtn = 'px-5 py-2 text-sm bg-gray-150 text-gray-350 switch'
 const slidePrev = () => {
     const swiper = document.getElementById('swiper')
     if (slideIndex.value === 0) {
-        swiper.children[0].children[7].scrollIntoView()
+        swiper.children[0].children[7].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
         slideIndex.value = 7
     }
     else if (slideIndex.value === 7) {
-        swiper.children[0].children[slideIndex.value - 4].scrollIntoView()
+        swiper.children[0].children[slideIndex.value - 4].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
         slideIndex.value -= 4
     }
     else {
-        swiper.children[0].children[slideIndex.value].scrollIntoView()
+        swiper.children[0].children[slideIndex.value].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
         slideIndex.value--
     }
 }
 const slideNext = () => {
     const swiper = document.getElementById('swiper')
     if (slideIndex.value === 7) {
-        swiper.children[0].children[slideIndex.value].scrollIntoView()
+        swiper.children[0].children[slideIndex.value].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
         slideIndex.value = 0
     }
     else if (slideIndex.value === 1) {
-        swiper.children[0].children[slideIndex.value + 4].scrollIntoView()
+        swiper.children[0].children[slideIndex.value + 4].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
         slideIndex.value += 4
     }
     else {
-        swiper.children[0].children[slideIndex.value].scrollIntoView()
+        swiper.children[0].children[slideIndex.value].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
         slideIndex.value++
     }
 }
