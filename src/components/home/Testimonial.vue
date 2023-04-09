@@ -3,7 +3,7 @@
         <h3 class="text-center mb-8 variant9">
             {{ $t('Testimonials van blije klanten zodra we die hebben') }}
         </h3>
-        <swiper :loop="true" :space-between="10" id="swiper" class="max-w-[100vw] overflow-hidden">
+        <Swiper :space-between="10" id="swiper" class="max-w-[100vw] overflow-hidden isolate">
             <SwiperSlide v-for="i in [1, 2]" :key="i">
                 <div class="flex lg:flex-row flex-col-reverse sm:justify-between justify-center items-center">
                     <div class="relative max-w-[280px] mr-24">
@@ -34,9 +34,9 @@
                                 <button @click="() => slidePrev()">
                                     <img src="./../../assets/arrow-rectangle.png" alt="arrow">
                                 </button>
-                                <div class="w-2.5 h-2.5 bg-gray-150 ml-1.5 cursor-pointer" @click="paginate(0)">
+                                <div class="w-2.5 h-2.5 bg-gray-150 ml-1.5 cursor-pointer" @click="slidePrev()">
                                 </div>
-                                <div class="w-2.5 h-2.5 bg-gray-150 ml-1.5 cursor-pointer" @click="paginate(1)">
+                                <div class="w-2.5 h-2.5 bg-gray-150 ml-1.5 cursor-pointer" @click="slideNext()">
                                 </div>
                                 <button @click="() => slideNext()">
                                     <img src="./../../assets/arrow-rectangle.png" alt="arrow" class="rotate-180 ml-1.5">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </SwiperSlide>
-        </swiper>
+        </Swiper>
     </div>
     <h3 class="mt-20 text-center variant6">Partner van</h3>
     <div class="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 px-4 lg:px-28 mt-5">
@@ -63,38 +63,18 @@
 <script setup>
 import { StarIcon } from '@heroicons/vue/20/solid'
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { ref } from 'vue';
-let activeSlide = ref(0)
 
-const slideNext = () => {
-    console.log(activeSlide)
-    const swiper = document.getElementById('swiper')
-    if (activeSlide.value === 1) {
-        swiper.children[0].children[0].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
-        activeSlide.value = 0
-    }
-    else {
-        swiper.children[0].children[1].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
-        activeSlide.value = 1
-    }
-}
 const slidePrev = () => {
-    console.log(activeSlide)
-    const swiper = document.getElementById('swiper')
-    if (activeSlide.value === 0) {
-        swiper.children[0].children[1].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
-        activeSlide.value = 1
-    }
-    else {
-        swiper.children[0].children[0].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
-        activeSlide.value = 0
-    }
+    const swiper = document.querySelector('.swiper-wrapper')
+    const swipe = document.getElementById('swiper')
+    swiper.style.transform = `translate3d(0, 0px, 0px)`
+    swiper.style.transitionDuration = '300ms'
 }
-const paginate = (index) => {
-    console.log('start')
-
-    const swiper = document.getElementById('swiper')
-    swiper.children[0].children[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
-    activeSlide.value = index
+const slideNext = () => {
+    const swiper = document.querySelector('.swiper-wrapper')
+    const swipe = document.getElementById('swiper')
+    swiper.style.transform = `translate3d(-${swipe.getBoundingClientRect().width}px, 0px, 0px)`
+    swiper.style.transitionDuration = '300ms'
+    
 }
 </script>

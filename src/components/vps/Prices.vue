@@ -19,7 +19,17 @@
                 <button class="absolute z-50 bottom-1/2 left-10 rotate-180" @click="slidePrev()">
                     <img src="./../../assets/arrow-right.png" alt="arrow">
                 </button>
-                <Swiper :slides-per-view="4" :space-between="10" :loop="true" id="swiper"
+                <Swiper :space-between="10" :loop="true" id="swiper" :breakpoints="{
+                    1024: {
+                        slidesPerView: 4
+                    },
+                    768: {
+                        slidesPrevView: 3
+                    },
+                    560: {
+                        slidesPerView: 2
+                    }
+                }"
                     class="isolate grid gap-2.5 grid-cols-1 max-w-[100vw] overflow-hidden sm:grid-cols-2 lg:grid-cols-4">
                     <SwiperSlide v-if="activeTab == 1" v-for="tier in tiers" :key="tier.id"
                         class="p-6 bg-primary cursor-pointer hover:scale-105 duration-300">
