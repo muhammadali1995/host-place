@@ -3,7 +3,7 @@
         <h3 class="text-center mb-8 variant9">
             {{ $t('Testimonials van blije klanten zodra we die hebben') }}
         </h3>
-        <swiper :loop="true" :space-between="10">
+        <swiper :loop="true" :space-between="10" id="swiper">
             <SwiperSlide v-for="i in [1, 2]">
                 <div class="flex lg:flex-row flex-col-reverse sm:justify-between justify-center items-center">
                     <div class="relative max-w-[280px] mr-24">
@@ -31,14 +31,14 @@
                                 <div class="font-normal text-gray-350 text-md">{{ $t('Job title') }}</div>
                             </div>
                             <div class="flex items-center">
-                                <button @click="swiper.slidePrev()">
+                                <button @click="() => slidePrev()">
                                     <img src="./../../assets/arrow-rectangle.png" alt="arrow">
                                 </button>
-                                <div class="w-2.5 h-2.5 bg-gray-150 ml-1.5 cursor-pointer" @click="swiper.slideTo(0)">
+                                <div class="w-2.5 h-2.5 bg-gray-150 ml-1.5 cursor-pointer" @click="paginate(0)">
                                 </div>
-                                <div class="w-2.5 h-2.5 bg-gray-150 ml-1.5 cursor-pointer" @click="swiper.slideTo(1)">
+                                <div class="w-2.5 h-2.5 bg-gray-150 ml-1.5 cursor-pointer" @click="paginate(1)">
                                 </div>
-                                <button @click="swiper.slidePrev()">
+                                <button @click="() => slideNext()">
                                     <img src="./../../assets/arrow-rectangle.png" alt="arrow" class="rotate-180 ml-1.5">
                                 </button>
                             </div>
@@ -60,15 +60,37 @@
 </template>
   
 
-<script>
+<script setup>
 import { StarIcon } from '@heroicons/vue/20/solid'
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue';
-const swiper = useSwiper()
+import { ref } from 'vue';
+let activeSlide = ref(0)
 
-export default {
-    components: {
-        SwiperSlide,
-        Swiper
+const slideNext = () => {
+    const swiper = document.getElementById('swiper')
+    if (activeSlide.value === 0) {
+        swiper.children[0].children[activeSlide.value].scrollIntoView()
+        activeSlide.value = 1
     }
+    else {
+        swiper.children[0].children[activeSlide.value].scrollIntoView()
+        activeSlide.value = 0
+    }
+}
+const slidePrev = () => {
+    const swiper = document.getElementById('swiper')
+    if (activeSlide.value === 1) {
+        swiper.children[0].children[activeSlide.value].scrollIntoView()
+        activeSlide.value = 0
+    }
+    else {
+        swiper.children[0].children[activeSlide.value].scrollIntoView()
+        activeSlide.value = 1
+    }
+}
+const paginate = (index) => {
+    const swiper = document.getElementById('swiper')
+    swiper.children[0].children[index].scrollIntoView()
+
 }
 </script>

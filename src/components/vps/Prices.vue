@@ -15,12 +15,12 @@
                     {{ $t('Yearly') }}
                 </button>
             </div>
-            <div class="mt-10 flow-root lg:-mx-8">
-                <Swiper :slides-per-view="4" :space-between="10" :loop="true"
-                    class="isolate relative grid gap-2.5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 swip">
-                    <button class="absolute bottom-1/2 left-0 rotate-180" @click="swiper.slidePrev()">
-                        <img src="./../../assets/arrow-right.png" alt="arrow">
-                    </button>
+            <div class="mt-10 relative flow-root lg:-mx-8 max-w-[100vw]">
+                <button class="absolute z-50 bottom-1/2 left-10 rotate-180" @click="slidePrev()">
+                    <img src="./../../assets/arrow-right.png" alt="arrow">
+                </button>
+                <Swiper :slides-per-view="4" :space-between="10" :loop="true" id="swiper"
+                    class="isolate grid gap-2.5 grid-cols-1 max-w-[100vw] overflow-hidden sm:grid-cols-2 lg:grid-cols-4">
                     <SwiperSlide v-if="activeTab == 1" v-for="tier in tiers" :key="tier.id"
                         class="p-6 bg-primary cursor-pointer hover:scale-105 duration-300">
                         <h3 :id="tier.id" class="text-3xl font-semibold leading-7 text-gray-350">{{ $t(tier.name) }}</h3>
@@ -57,22 +57,54 @@
                             {{ $t('Bestel') }}
                         </button>
                     </SwiperSlide>
-                    <button class="absolute bottom-1/2 right-0" @click="swiper.slideNext()">
-                        <img src="./../../assets/arrow-right.png" alt="arrow">
-                    </button>
                 </Swiper>
+                <button class="absolute z-50 bottom-1/2 right-10" @click="slideNext()">
+                    <img src="./../../assets/arrow-right.png" alt="arrow">
+                </button>
             </div>
         </div>
     </div>
 </template>
   
-<script>
-import {Swiper, SwiperSlide, useSwiper } from 'swiper/vue';
+<script setup>
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue';
 import { ref } from 'vue';
 let activeTab = ref(1)
+let slideIndex = ref(0)
 
 const darkBtn = 'px-5 py-2 text-sm bg-white text-gray-350 switch'
 const lightBtn = 'px-5 py-2 text-sm bg-gray-150 text-gray-350 switch'
+
+const slidePrev = () => {
+    const swiper = document.getElementById('swiper')
+    if (slideIndex.value === 0) {
+        swiper.children[0].children[7].scrollIntoView()
+        slideIndex.value = 7
+    }
+    else if (slideIndex.value === 7) {
+        swiper.children[0].children[slideIndex.value - 4].scrollIntoView()
+        slideIndex.value -= 4
+    }
+    else {
+        swiper.children[0].children[slideIndex.value].scrollIntoView()
+        slideIndex.value--
+    }
+}
+const slideNext = () => {
+    const swiper = document.getElementById('swiper')
+    if (slideIndex.value === 7) {
+        swiper.children[0].children[slideIndex.value].scrollIntoView()
+        slideIndex.value = 0
+    }
+    else if (slideIndex.value === 1) {
+        swiper.children[0].children[slideIndex.value + 4].scrollIntoView()
+        slideIndex.value += 4
+    }
+    else {
+        swiper.children[0].children[slideIndex.value].scrollIntoView()
+        slideIndex.value++
+    }
+}
 
 const changeActiveTab = (e, num) => {
     activeTab.value = num
@@ -150,24 +182,4 @@ const tiers2 = [
         features: ['2 GB Ram', '2 CPU Cores', '25 GB SSD', 'No limit traffic'],
     }
 ]
-
-export default {
-    components: {
-      Swiper,
-      SwiperSlide,
-    },
-    setup() {
-        const swiper = useSwiper();
-
-        return {
-            swiper,
-            changeActiveTab,
-            activeTab,
-            darkBtn,
-            lightBtn,
-            tiers,
-            tiers2
-        };
-    },
-};
 </script>
